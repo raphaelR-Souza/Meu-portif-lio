@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portfólio - Raphael Souza</title>
+
+<!-- Fonte moderna e corporativa -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --purple-strong: #950552;
+    --dark-bg: #121212;
+    --dark-bg-alt: #1b1b1b;
+    --light-text: #f0f0f0;
+    --muted-text: #a0a0a0;
+    --border-radius: 12px;
+    --transition: 0.3s ease;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Capa */
+  .cover {
+    position: relative;
+    height: 240px;
+    background: url("https://source.unsplash.com/1600x400/?technology,office") center/cover no-repeat;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    box-shadow: inset 0 -40px 50px -10px rgba(18,18,18,0.8);
+    transition: transform var(--transition);
+  }
+  .cover:hover {
+    transform: scale(1.02);
+  }
+
+  /* Foto de perfil */
+  .profile-pic {
+    position: absolute;
+    bottom: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 5px solid var(--dark-bg);
+    background: url("https://source.unsplash.com/200x200/?portrait,man") center/cover no-repeat;
+    box-shadow: 0 0 15px var(--purple-strong);
+    transition: box-shadow var(--transition), transform var(--transition);
+    cursor: pointer;
+  }
+  .profile-pic:hover {
+    box-shadow: 0 0 30px var(--purple-strong);
+    transform: translateX(-50%) scale(1.05);
+  }
+
+  header {
+    padding: 100px 20px 40px;
+    text-align: center;
+  }
+
+  header h1 {
+    font-weight: 600;
+    font-size: 2.8rem;
+    margin: 0 0 12px 0;
+    letter-spacing: 0.04em;
+    transition: color var(--transition);
+  }
+  header h1:hover {
+    color: var(--purple-strong);
+  }
+
+  header p {
+    max-width: 760px;
+    margin: 0 auto;
+    font-weight: 400;
+    font-size: 1.15rem;
+    color: var(--muted-text);
+    line-height: 1.6;
+  }
+
+  section {
+    max-width: 900px;
+    margin: 0 auto 60px auto;
+    padding: 0 20px;
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 1.6rem;
+    margin-bottom: 14px;
+    color: var(--purple-strong);
+    border-bottom: 3px solid var(--purple-strong);
+    padding-bottom: 6px;
+    letter-spacing: 0.04em;
+    transition: color var(--transition), border-color var(--transition);
+    cursor: default;
+  }
+  h2:hover {
+    color: #6c053f;
+    border-color: #6c053f;
+  }
+
+  .bio {
+    background-color: var(--dark-bg-alt);
+    border-radius: var(--border-radius);
+    padding: 24px 28px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    transition: background-color var(--transition);
+  }
+  .bio:hover {
+    background-color: #2a2a2a;
+  }
+
+  /* Flex container para cards */
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 16px;
+  }
+
+  /* Cards para certificações e educação */
+  .card {
+    background-color: var(--dark-bg-alt);
+    flex: 1 1 250px;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    border-left: 6px solid var(--purple-strong);
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: background-color var(--transition), border-color var(--transition), transform var(--transition);
+    cursor: default;
+    box-shadow: 0 0 8px rgba(149, 5, 82, 0.4);
+  }
+  .card:hover {
+    background-color: #2a2a2a;
+    border-color: #6c053f;
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(149, 5, 82, 0.7);
+  }
+
+  /* Contato */
+  .contact {
+    background-color: var(--dark-bg-alt);
+    padding: 32px 20px;
+    text-align: center;
+    border-radius: var(--border-radius);
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+  }
+
+  .contact a {
+    display: inline-block;
+    margin: 0 12px;
+    padding: 14px 28px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: white;
+    background-color: var(--purple-strong);
+    border-radius: 40px;
+    text-decoration: none;
+    box-shadow: 0 3px 8px rgba(149,5,82,0.6);
+    transition: background-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  }
+
+  .contact a:hover,
+  .contact a:focus {
+    background-color: #6c053f;
+    box-shadow: 0 6px 15px rgba(108,5,63,0.8);
+    transform: scale(1.1);
+  }
+
+  /* Responsivo */
+  @media (max-width: 800px) {
+    .cards-container {
+      flex-direction: column;
+    }
+  }
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 2rem;
+    }
+    header p {
+      font-size: 1rem;
+    }
+    .profile-pic {
+      width: 110px;
+      height: 110px;
+      bottom: -55px;
+    }
+    section {
+      padding: 0 12px;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Capa -->
+  <div class="cover" title="Capa do perfil">
+    <div class="profile-pic" title="Foto de perfil"></div>
+  </div>
+
+  <!-- Cabeçalho -->
+  <header>
+    <h1>Raphael Souza</h1>
+    <p>Supervisor de Suporte Técnico | Help Desk & Service Desk | Atendimento via Chat | ITSM | SLA | Gestão de Equipe Ágil | Operações de TI | WFM | Remoto ou RJ</p>
+  </header>
+
+  <!-- Sobre Mim -->
+  <section>
+    <h2>Sobre Mim</h2>
+    <div class="bio">
+      <p>Sou Supervisor de Help Desk, especializado em operações de atendimento via chat e gestão de equipes técnicas. Atuo com foco em WFM (Workforce Management), cumprimento de SLA, redução de TMA/TME e excelência no suporte Nível 1.</p>
+      <p>Utilizo análises preditivas e dashboards de performance para identificar padrões, melhorar processos e impulsionar resultados. Tenho experiência com gestão de KPIs, metodologias ágeis (Scrum) e ITSM. Minha abordagem é orientada por dados, melhoria contínua e produtividade operacional.</p>
+      <p>Aberto a novas oportunidades CLT, presenciais no Rio de Janeiro ou remotas, em ambientes colaborativos e voltados à inovação em TI e atendimento ao usuário.</p>
+    </div>
+
+    <!-- Certificações -->
+    <h2>Certificações</h2>
+    <div class="cards-container">
+      <div class="card">HDI SCA</div>
+    </div>
+
+    <!-- Educação -->
+    <h2>Educação</h2>
+    <div class="cards-container">
+      <div class="card">Curso Técnico de Informática – Centro Educacional Evolução</div>
+      <div class="card">Gestão de TI (em andamento) – Cruzeiro do Sul</div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <div class="contact">
+    <a href="mailto:raphael.r.souza56@gmail.com" aria-label="Enviar e-mail para Raphael Souza">📧 Email</a>
+    <a href="https://wa.me/5522999229724" target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp para contato">💬 WhatsApp</a>
+  </div>
+
+</body>
+</html>
